@@ -1,0 +1,13 @@
+torch>=2.1.0
+torchvision>=0.16.0
+tqdm
+pandas
+numpy
+scikit-learn
+diffusers[torch]>=0.27.0
+transformers>=4.40.0
+accelerate>=0.27.2
+Pillow
+streamlit>=1.33.0
+kaggle
+opencv-python
