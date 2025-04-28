@@ -27,7 +27,7 @@ if upload:
 
     if st.button("Get Happy Score 🎯"):
         model, device = load_scoring_model()
-        score = predict_happy_score(img, model, device="mps")
+        score = predict_happy_score(img, model, device)
         st.metric("Happy Score", f"{score}/10")
 
     if st.button("Upgrade happiness ✨"):
