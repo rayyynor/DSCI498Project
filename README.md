@@ -43,3 +43,38 @@ The model is built using **PyTorch**, leveraging **ResNet50** as the backbone fo
 
 ## Deployment & Usage
 The model is deployed as a **user-friendly web app** using **Streamlit**, allowing real-time smile rating analysis.
+
+
+# Happyscore  –  Liang Sisheng, Siyuan Cao
+Predict how happy a face looks (score 1-10) and generate a happier version.
+
+## Folder layout
+├── app.py # Streamlit UI
+├── cli_helper.py # quick wrapper (download / train)
+├── data_utils.py
+├── generator.py # xformers guarded
+├── inference.py # imports torch + get_scoring_model
+├── model.py
+├── train.py # num_workers=0, Grayscale→RGB
+└── requirements.txt # clean list, numpy<2 pinned
+
+## Quick start (macOS)
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+huggingface-cli login             # first-time only
+python train.py --download-data   # fetch FER-2013
+python train.py                   # train scorer (≈12 min on M2)
+streamlit run main.py             # set up dashboard on your local
+
+
+##Configure secrets once per machine
+# Kaggle (dataset)
+mkdir -p ~/.kaggle
+cp kaggle.json ~/.kaggle/ # or set KAGGLE_USERNAME / KAGGLE_KEY
+chmod 600 ~/.kaggle/kaggle.json
+# (Stable-Diffusion)
+huggingface-cli login # paste hf_....tc token
+
+#Download FER-2013(if needed)
+python cli_helper.py --download-data
