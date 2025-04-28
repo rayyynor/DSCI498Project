@@ -7,8 +7,11 @@ from PIL import Image
 from pathlib import Path
 from torchvision import transforms
 from model import get_scoring_model
+from pathlib import Path
 
-def load_scoring_model(weights_path="happyscore_resnet18.pt", device=None):
+
+
+def load_scoring_model(weights_path = Path(__file__).parent / "happyscore_resnet18.pt", device=None):
     if device is None:                       # ← choose automatically
         device = "mps" if torch.backends.mps.is_available() else "cpu"
     model = get_scoring_model().to(device)
