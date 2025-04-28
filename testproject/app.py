@@ -26,7 +26,8 @@ if upload:
     st.image(img, caption="Original", width=256)
 
     if st.button("Get Happy Score 🎯"):
-        model, _ = load_scoring_model(device="mps")
+        # AFTER  (no arg → "cuda" if present, else "cpu", else "mps" on a Mac)
+        model, device = load_scoring_model()
         score = predict_happy_score(img, model, device="mps")
         st.metric("Happy Score", f"{score}/10")
 
