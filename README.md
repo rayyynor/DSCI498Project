@@ -49,15 +49,16 @@ The model is deployed as a **user-friendly web app** using **Streamlit**, allowi
 Predict how happy a face looks (score 1-10) and generate a happier version.
 
 ## Folder layout
-Start with testproject folder
-├── app.py # Streamlit UI
-├── cli_helper.py # quick wrapper (download / train)
-├── data_utils.py
-├── generator.py # xformers guarded
-├── inference.py # imports torch + get_scoring_model
-├── model.py
-├── train.py # num_workers=0, Grayscale→RGB
-└── requirements.txt # clean list, numpy<2 pinned
+testproject/
+│
+├── app.py              # Streamlit UI for user interaction
+├── cli_helper.py       # Command-line wrapper for downloading and training models
+├── data_utils.py       # Data loading utilities (e.g., grayscale to RGB, num_workers=0)
+├── generator.py        # Main generation logic (with xformers guarded)
+├── inference.py        # Model inference pipeline; loads Torch and scoring model
+├── model.py            # Model architecture definition
+├── train.py            # Training loop and configurations
+├── requirements.txt    # Clean list of dependencies (numpy pinned <2)
 
 ## Quick start (macOS)
 ```bash
