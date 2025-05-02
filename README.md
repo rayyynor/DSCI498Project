@@ -49,7 +49,7 @@ The model is deployed as a **user-friendly web app** using **Streamlit**, allowi
 Predict how happy a face looks (score 1-10) and generate a happier version.
 
 ## Folder layout
-'''
+```
 testproject/
 │
 ├── app.py              # Streamlit UI for user interaction
@@ -60,7 +60,7 @@ testproject/
 ├── model.py            # Model architecture definition
 ├── train.py            # Training loop and configurations
 ├── requirements.txt    # Clean list of dependencies (numpy pinned <2)
-'''
+```
 ## Quick start (macOS)
 ```bash
 python -m venv .venv && source .venv/bin/activate
