@@ -23,7 +23,7 @@ By introducing a **numerical scale for smiles**, we move beyond simple "happy or
 
 ## Dataset Overview
 For this project, we utilized the **FER2013 (Facial Expression Recognition 2013) dataset**, a widely used facial emotion dataset containing **35,000+ grayscale facial images** categorized into various emotion labels. Since FER2013 only classifies emotions into discrete categories, we transformed this data into a **continuous smile rating scale (1-10)** to achieve a more precise assessment.
-
+Download Link (Suggest download from this link): https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition
 ### Data Processing Steps
 1️⃣ **Face Detection & Cropping** – Used **MTCNN (Multi-task Cascaded Convolutional Networks)** to detect and crop faces, ensuring the model focuses on relevant facial features.  
 2️⃣ **Feature Extraction** – Leveraged **ResNet50**, a pre-trained deep learning model, to extract high-level facial features and analyze smile intensity.  
@@ -49,6 +49,7 @@ The model is deployed as a **user-friendly web app** using **Streamlit**, allowi
 Predict how happy a face looks (score 1-10) and generate a happier version.
 
 ## Folder layout
+Start with testproject folder
 ├── app.py # Streamlit UI
 ├── cli_helper.py # quick wrapper (download / train)
 ├── data_utils.py
